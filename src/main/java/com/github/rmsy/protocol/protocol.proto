@@ -1,0 +1,17 @@
+package patest;
+
+option java_package = "com.github.rmsy.protocol";
+option java_outer_classname = "PATestProto";
+
+message Packet {
+  extensions 100 to max;
+}
+
+message PlayerJoin {
+  extend Packet {
+    optional PlayerJoin player_join = 100;
+  }
+
+  required string name = 1;
+  optional string display_name = 2;
+}
