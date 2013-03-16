@@ -1,0 +1,17 @@
+package test;
+
+option java_package = "com.github.rmsy.protocol";
+option java_outer_classname = "TestProto";
+
+message DefaultMessage {
+    extensions 2 to max;
+}
+
+message ExtendingMessage {
+    extend DefaultMessage {
+        required OtherMessage msg = 3;
+    }
+}
+
+message OtherMessage {
+}
